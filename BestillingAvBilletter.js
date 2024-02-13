@@ -1,18 +1,37 @@
+let ticketArray = [];
 function visBilletter(){
-    navn = document.getElementById("fornavn").value + " " +
-    document.getElementById("etternavn").value;
-    telfnr = document.getElementById("telefonnr").value;
-    epost = document.getElementById("epost").value.indexOf("@");
-    antallBilletter = document.getElementById("antall").value;
+    const name = document.getElementById("fornavn").value +
+        " " + document.getElementById("etternavn").value;
+    const phonenmbr = document.getElementById("telefonnr").value;
+    const email = document.getElementById("epost").value;
+    const nmbrTickets = document.getElementById("antall").value;
+    const filmName = document.getElementById("velgFilm").value;
 
-    let ut = "Navn: " + navn + "\nTelefon: " + telfnr + "\nEpost: " + epost +
-            "<br>Antall billetter: " + antallBilletter;
+    const ticketPurchase = {
+        name : name,
+        phonenmbr: phonenmbr,
+        email: email,
+        nmbrTickets: nmbrTickets,
+        filmName: filmName
+    };
 
-    const billettArray ={navn, telfnr, epost, antallBilletter};
+    ticketArray.push(ticketPurchase);
 
-    for (let billett in billettArray){
-        ut += billettArray[billett];
+    let ut = "<table><tr><th>Navn</th>" +
+        "<th>Telefonnummer</th><th>Epost</th>" +
+        "<th>Antall Billetter</th><th>Til Film</th></tr>";
+
+    for (let i of ticketArray){
+        ut += "<tr>";
+        ut += "<td>" + i.name + "</td><td>" + i.phonenmbr + "</td><td>" +
+        i.email + "</td><td>" + i.nmbrTickets + "</td><td>" + i.filmName + "</td>";
+        ut += "</tr>"
     }
-
     document.getElementById("utInfo").innerHTML = ut;
 }
+
+function deleteTickets(){
+    document.getElementById("utInfo").innerHTML = "";
+    ticketArray = [];
+}
+
