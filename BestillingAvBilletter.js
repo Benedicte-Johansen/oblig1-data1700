@@ -35,19 +35,14 @@ function deleteTickets(){
     ticketArray = [];
 }
 
-function validateform(){
-    let x = document.forms["ticketOrdering"]["etternavn"].value;
-    if (x === ""){
-        alert("Please fill out your name");
-        return false;
-    }
-}
+
     function validateEmail(epost){
         const at = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (epost.value.match(at)){
         return true;
     }else {
         document.getElementById("errorMessageEmail").innerHTML="<b>Not av valid email address</b>";
+        return false;
     }
 }
 
