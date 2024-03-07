@@ -1,11 +1,11 @@
-let ticketArray = [];
+/*let ticketArray = [];
 function visBilletter() {
-    const name = document.getElementById("fornavn").value +
+    let name = document.getElementById("fornavn").value +
         " " + document.getElementById("etternavn").value;
-    const phonenmbr = document.getElementById("telefonnr").value;
-    const email = document.getElementById("epost").value;
-    const nmbrTickets = document.getElementById("antall").value;
-    const filmName = document.getElementById("velgFilm").value;
+    let phonenmbr = document.getElementById("telefonnr").value;
+    let email = document.getElementById("epost").value;
+    let nmbrTickets = document.getElementById("antall").value;
+    let filmName = document.getElementById("velgFilm").value;
 
     const ticketPurchase = {
         name: name,
@@ -14,6 +14,30 @@ function visBilletter() {
         nmbrTickets: nmbrTickets,
         filmName: filmName
     };
+
+    const at = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (email === "" || phonenmbr === "" || nmbrTickets === "" || name === ""){
+        document.getElementById("errorMessageEmail").innerHTML = "Please fill inn the input boxes";
+    } else if (email.value.match(at)){
+        document.getElementById("errorMessageEmail").innerHTML = "Please enter a valid email address";
+    } else if (isNaN(phonenmbr) && phonenmbr.length!==8){
+        document.getElementById("errorMessagePhonenmbr").innerHTML = "Please enter a valid phonenumber";
+    } else {
+        ticketArray.push(ticketPurchase);
+
+        let ut = "<table><tr><th>Navn</th>" +
+            "<th>Telefonnummer</th><th>Epost</th>" +
+            "<th>Antall Billetter</th><th>Til Film</th></tr>";
+
+        for (let i of ticketArray) {
+            ut += "<tr>";
+            ut += "<td>" + i.name + "</td><td>" + i.phonenmbr + "</td><td>" +
+                i.email + "</td><td>" + i.nmbrTickets + "</td><td>" + i.filmName + "</td>";
+            ut += "</tr>"
+        }
+        document.getElementById("utInfo").innerHTML = ut;
+    }
 
     ticketArray.push(ticketPurchase);
 
@@ -30,7 +54,7 @@ function visBilletter() {
     document.getElementById("utInfo").innerHTML = ut;
 }
 
-function deleteTickets(){
+function deleteTickets() {
     document.getElementById("utInfo").innerHTML = "";
     ticketArray = [];
 }
@@ -59,4 +83,4 @@ function validatephone(phonenmbr){
         document.getElementById("telefonnr").innerHTML="<b>Not a valid phone number</b>";
         return false;
     }
-}
+}*/
