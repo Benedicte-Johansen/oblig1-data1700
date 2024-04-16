@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+>>>>>>> 325a4fa0d3f802dfec2d23c558f12358a5e00b94
 <project version="4">
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
