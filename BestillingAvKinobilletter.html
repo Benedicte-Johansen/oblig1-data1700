@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av Kinobilletter</title>
+    <script type="text/javascript" src="BestillingAvBilletter.js"></script>
+    <script type="text/javascript" src="Billetter.js"></script>
+</head>
+<body>
+<h1>Bestilling av kinobilletter <br></h1>
+    <label for="velgFilm">Velg film: </label>
+    <select id="velgFilm" name="velgFilm" required>
+        <option value="film1">Film 1</option>
+        <option value="film2">Film 2</option>
+        <option value="film3">Film 3</option>
+        <option value="film4">Film 4</option>
+    </select>
+    <br>
+
+    <br><br>
+    <label for="antall">Antall: </label>
+    <input type="number" id="antall" name="antall" pattern="[0-9]{2}">
+    <span id="errorMessageNmbrTickets"></span>
+    <br><br>
+
+    <label for="fornavn">Fornavn: </label>
+    <input type="text" id="fornavn" name="fornavn" required maxlength="50"><br>
+    <label for="etternavn">Etternavn: </label>
+    <input type="text" id="etternavn" name="fornavn">
+    <div id="errorMessageSurname"></div>
+    <label for="telefonnr">TelefonNr: </label>
+    <input type="number" id="telefonnr" name="telefonnr" pattern="[0-9]{8}">
+    <div id="errorMessagePhonenmbr"></div>
+    <label for="epost">Epost: </label>
+    <input type="text" id="epost" name="epost"><br>
+    <span id="errorMessageEmail"></span><br>
+
+    <input type="button" value="Buy tickets" onclick="visBilletter()">
+
+<h2>Alle billetter: </h2>
+<div id="utInfo">
+
+</div>
+
+<input type="button" onclick="deleteTickets();" value="Slett alle billettene">
+
+</body>
+<script src="BestillingAvBilletter.js"></script>
+<script src="Billetter.js"></script>
+</html>
